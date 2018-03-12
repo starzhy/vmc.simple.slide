@@ -22,6 +22,14 @@
     background-size: cover;
 }
 
+.vmc-simple-slide .vmc-simple-slide-img {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
 /************************************************/
 
 .vmc-simple-slide-handle-buttons {

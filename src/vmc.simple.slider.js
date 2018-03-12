@@ -52,6 +52,8 @@
         the.height = 0;
         // 是否自动播放
         the.auto = the.options.auto;
+        // 是否小于IE9
+        the.tinyIE = navigator.appName == 'Microsoft Internet Explorer' && parseInt(navigator.appVersion.split(';')[1].replace(/[ ]/g, '').replace('MSIE', '')) < 9;
     };
 
     vmcSimpleSlide.prototype.options = {
@@ -68,7 +70,7 @@
         // 自动播放方向，可选值right|left
         autoPlayDirection: 'right',
         // 图片停留时长（毫秒）
-        duration: 1000,
+        duration: 4000,
         // 转场效果时长（毫秒）
         speed: 600,
         // 显示侧边翻页按钮 true|false
@@ -100,10 +102,17 @@
 
         // 整理项
         $original.children().each(function () {
-            var $dom = $(this);
+            var $dom = $(this),
+                imgSrc = $dom.find('img').attr('src');
             var $item = $('<li>')
                 .addClass('vmc-simple-slide-item')
-                .css({backgroundImage: 'url(' + $dom.find('img').attr('src') + ')'});
+                .css({backgroundImage: 'url(' + imgSrc + ')'});
+            if (the.tinyIE) {
+                var $img = $('<img>')
+                    .addClass('vmc-simple-slide-img')
+                    .attr('src', imgSrc);
+                $item.append($img);
+            }
             the.items.push($item);
             the.summaries.push($dom.attr('title'));
         });

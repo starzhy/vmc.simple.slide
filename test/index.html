@@ -2,19 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>vmc.simple.slide Demo</title>
     <script type="text/javascript" src="../lib/jquery.min.js"></script>
-    <script type="text/javascript" src="../src/vmc.simple.slider.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            $('#vmc-slider').vmcSimpleSlide({
-                // height:600
-                minWidth: 400
-            });
-        });
-    </script>
-    <link rel="stylesheet" type="text/css" href="../src/css/style.css">
-    <style>
+    <script type="text/javascript" src="../dist/vmc.simple.slide.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../dist/css/style.min.css">
+    <style type="text/css">
         body {
             margin: 0;
         }
@@ -28,6 +20,7 @@
                 height: 300px;
             }
         }
+
         @media screen and (max-width: 768px) {
             .box {
                 height: 200px;
@@ -36,6 +29,14 @@
 
 
     </style>
+    <script type="text/javascript">
+        $(function () {
+            $('#vmc-slider').vmcSimpleSlide({
+                // height:600
+                minWidth: 400
+            });
+        });
+    </script>
 </head>
 <body>
 

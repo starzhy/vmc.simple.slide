@@ -6,7 +6,7 @@
 ```
 // 引用
 <script type="text/javascript" src="../lib/jquery.min.js"></script>
-<script type="text/javascript" src="../dist/vmc.simple.slider.min.js"></script>
+<script type="text/javascript" src="../dist/vmc.simple.slide.min.js"></script>
 
 // 选项
 var option = {
@@ -36,7 +36,7 @@ var option = {
      summaryIsHtml: false,
      // 鼠标悬停，停止播放 true|false
      hoverStop: true
-    };
+};
 
 $('#slide').vmcSimpleSlide(options);
 ```

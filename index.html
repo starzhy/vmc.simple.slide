@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vmc.simple.slide Demo</title>
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="dist/vmc.simple.slide.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="dist/css/style.min.css">
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+
+        .box {
+            height: 400px;
+        }
+
+        @media screen and (max-width: 992px) {
+            .box {
+                height: 300px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .box {
+                height: 200px;
+            }
+        }
+
+
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $('#vmc-slider').vmcSimpleSlide({
+                // height:600
+                minWidth: 400
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div class="box">
+    <ul id="vmc-slider">
+        <li title="这一<b>片</b>文章"><img src="http://www.vomoc.com/Public/Home/images/slider/demo1.jpg"></li>
+        <li><img src="http://www.vomoc.com/Public/Home/images/slider/demo2.jpg"></li>
+        <li><img src="http://www.vomoc.com/Public/Home/images/slider/demo3.jpg"></li>
+    </ul>
+</div>
+
+
+</body>
+</html>

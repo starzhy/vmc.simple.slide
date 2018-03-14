@@ -1,10 +1,10 @@
 /**
- * vmc.simple.slide v1.0.0
+ * vmc.simple.slide v1.0.1
  * 维米客响应式JQuery图片轮播插件
  * 维米客网页工作室 Vomoc Studio
  * www.vomoc.com
  * vomoc@qq.com
- * 2017/03/11
+ * 2017/03/14
  **/
 ;(function ($, undefined) {
     var dataKey = "vomoc";
@@ -29,8 +29,8 @@
     var vmcSimpleSlide = function ($element, settings) {
         var the = this;
         the.options = $.extend({}, the.options, settings);
-        the.original = $element;
-        the.parent = $element.parent();
+        the.original = $element.children().first();
+        the.parent = $element;
         the.elem = null;
         the.items = [];
         the.summaries = [];
@@ -43,6 +43,7 @@
         the.tinyIE = navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion.split(";")[1].replace(/[ ]/g, "").replace("MSIE", "")) < 9
     };
     vmcSimpleSlide.prototype.options = {
+        data: [],
         width: "auto",
         height: "auto",
         minWidth: 0,
@@ -185,8 +186,8 @@
         the.width = the.width < opts.minWidth ? opts.minWidth : the.width;
         the.height = the.height < opts.minHeight ? opts.minHeight : the.height;
         the.elem.height(the.height).width(the.width);
-        for (var i = 0; i < the.items.length;
-             i++) {
+        for (var i = 0;
+             i < the.items.length; i++) {
             the.items[i].height(the.height).width(the.width)
         }
     };
@@ -203,5 +204,8 @@
             $summary.html($("<div>").addClass("text").text(summary))
         }
         this.elem.children(".vmc-simple-slide-summary-mask,.vmc-simple-slide-summary").toggle(isShow)
+    };
+    vmcSimpleSlide.prototype.reSize = function () {
+        this._setSize()
     }
 })(jQuery);

@@ -1,16 +1,16 @@
 /**
- * vmc.simple.slide v1.0.0
+ * vmc.simple.slide v1.0.1
  * 维米客响应式JQuery图片轮播插件
  * 维米客网页工作室 Vomoc Studio
  * www.vomoc.com
  * vomoc@qq.com
- * 2017/03/11
+ * 2017/03/14
  **/
 ;(function ($, undefined) {
-    var dataKey = "vomoc";
+    var dataKey = 'vomoc';
 
     $.fn.vmcSimpleSlide = function (settings) {
-        var run = $.type(settings) === "string",
+        var run = $.type(settings) === 'string',
             args = [].slice.call(arguments, 1);
         if (!this.length) return;
         return this.each(function () {
@@ -31,9 +31,9 @@
         // 配置
         the.options = $.extend({}, the.options, settings);
         // 原dom
-        the.original = $element;
+        the.original = $element.children().first();
         // 父层节点
-        the.parent = $element.parent();
+        the.parent = $element;
         // 替换dom
         the.elem = null;
         // 项数组，存放新的li
@@ -57,6 +57,8 @@
     };
 
     vmcSimpleSlide.prototype.options = {
+        // 数据
+        data: [],
         // 宽度 auto|number
         width: 'auto',
         // 高度 auto|number
@@ -321,11 +323,11 @@
      */
     vmcSimpleSlide.prototype._setHandleButtons = function (index) {
         this.elem
-            .find(".vmc-simple-slide-handle-buttons")
+            .find('.vmc-simple-slide-handle-buttons')
             .children()
             .removeClass('active')
             .eq(index)
-            .addClass("active");
+            .addClass('active');
     };
 
     /**
@@ -347,6 +349,13 @@
         this.elem
             .children('.vmc-simple-slide-summary-mask,.vmc-simple-slide-summary')
             .toggle(isShow);
+    };
+
+    /**
+     * 重新渲染尺寸
+     */
+    vmcSimpleSlide.prototype.reSize = function () {
+        this._setSize();
     };
 
 })(jQuery);

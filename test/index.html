@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>vmc.simple.slide Demo</title>
     <script type="text/javascript" src="../lib/jquery.min.js"></script>
-    <script type="text/javascript" src="../dist/vmc.simple.slide.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../dist/css/style.min.css">
+    <script type="text/javascript" src="../src/vmc.simple.slide.js"></script>
+    <link rel="stylesheet" type="text/css" href="../src/css/style.css">
     <style type="text/css">
         body {
             margin: 0;
@@ -31,22 +31,39 @@
     </style>
     <script type="text/javascript">
         $(function () {
-            $('#vmc-slider').vmcSimpleSlide({
-                // height:600
+            $('#vmc-slide').vmcSimpleSlide({
                 minWidth: 400
+            });
+            $('#re-size').on('click', function () {
+                $('#vmc-slide').vmcSimpleSlide('reSize');
+            });
+            $('#show-box').on('click', function () {
+                $('#vmc-slide').show();
+            });
+            $('#hide-box').on('click', function () {
+                $('#vmc-slide').hide();
+            });
+            $('#show-box-2').on('click', function () {
+                $('#vmc-slide').show();
+                $('#vmc-slide').vmcSimpleSlide('reSize');
             });
         });
     </script>
 </head>
 <body>
 
-<div class="box">
-    <ul id="vmc-slider">
-        <li title="这一<b>片</b>文章"><img src="http://www.vomoc.com/Public/Home/images/slider/demo1.jpg"></li>
+<div class="box" id="vmc-slide" style="display:none;">
+    <ul>
+        <li title="这里输入图片相关文字"><img src="http://www.vomoc.com/Public/Home/images/slider/demo1.jpg"></li>
         <li><img src="http://www.vomoc.com/Public/Home/images/slider/demo2.jpg"></li>
         <li><img src="http://www.vomoc.com/Public/Home/images/slider/demo3.jpg"></li>
     </ul>
 </div>
+<p>当页面打开，如果默认轮播图是隐藏的，显示轮播图后尺寸需要调用重置尺寸方法</p>
+<button id="hide-box">隐藏</button>
+<button id="show-box">显示</button>
+<button id="re-size">重置尺寸</button>
+<button id="show-box-2">显示并重置尺寸</button>
 
 
 </body>

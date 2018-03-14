@@ -5,9 +5,22 @@
 
 ```
 // 引用
-<script type="text/javascript" src="../lib/jquery.min.js"></script>
-<script type="text/javascript" src="../dist/vmc.simple.slide.min.js"></script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="vmc.simple.slide.min.js"></script>
+```
 
+```
+// HTML
+<div class="box" id="slide">
+    <ul>
+        <li title="这里输入图片相关文字"><img src="demo1.jpg"></li>
+        <li><img src="demo2.jpg"></li>
+        <li><img src="demo3.jpg"></li>
+    </ul>
+</div>
+```
+
+```
 // 选项
 var option = {
      // 宽度 auto|number
@@ -98,3 +111,12 @@ $('#slide').vmcSimpleSlide(options);
 #### hoverStop 鼠标悬停，停止播放
 - 类型：Boolean
 - 默认值：true
+
+
+## 方法 method
+
+#### reSize 重置尺寸
+```
+// 示例
+$('#slide').vmcSimpleSlide('reSize');
+```

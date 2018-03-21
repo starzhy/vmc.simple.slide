@@ -1,5 +1,7 @@
 # vmc.simple.slide 简单的JQuery响应式幻灯片(图片轮播)插件
 
+### 带丰富转场效果的轮播图插件 [点击这里](https://github.com/vomoc/vmc.slide)
+
 ## 演示
 
 [demo](https://vomoc.github.io/vmc.simple.slide/test/)

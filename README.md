@@ -1,5 +1,4 @@
-# slider
-简单的JQuery响应式幻灯片(图片轮播)插件
+# vmc.simple.slide 简单的JQuery响应式幻灯片(图片轮播)插件
 
 ## 演示
 

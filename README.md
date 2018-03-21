@@ -1,6 +1,10 @@
 # slider
 简单的JQuery响应式幻灯片(图片轮播)插件
 
+## 演示
+
+[demo](https://vomoc.github.io/vmc.simple.slide/test/)
+
 ## 使用
 
 ```
